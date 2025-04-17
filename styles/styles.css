@@ -1,0 +1,41 @@
+/* Importação de Fontes do Google */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Importação de Estilos */
+@import url('variables.css');
+@import url('reset.css');
+@import url('header.css');
+@import url('hero.css');
+@import url('skills.css');
+@import url('projects.css');
+@import url('experience.css');
+@import url('testimonial.css');
+@import url('footer.css');
+@import url('responsive.css');
+
+/* Estilos Base */
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    color: #454346;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: var(--leading-tight);
+    font-weight: var(--font-bold);
+}
+
+code, pre {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+}
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Ajuste baseado na altura do seu header fixo */
+} 

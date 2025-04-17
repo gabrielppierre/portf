@@ -1,0 +1,286 @@
+/* Reset e variáveis globais */
+:root {
+    --hero-bg: #2260C5;
+    --text-color: #ffffff;
+    --wave-animation-duration: 25s;
+    --highlight-color: #50C4ED;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+}
+
+/* Reset básico */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--hero-bg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+.introduction {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-blue {
+    color: var(--highlight-color);
+}
+
+.description {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--text-secondary);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.stats div {
+    position: relative;
+}
+
+.stats div:first-child::after {
+    content: "";
+    position: absolute;
+    right: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.stats span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stats p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+}
+
+.browse-experience {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--highlight-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 2rem;
+}
+
+.browse-experience:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(80, 196, 237, 0.4);
+}
+
+/* Hero Image */
+.hero-image {
+    flex: 1;
+    max-width: 240px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 75, 154, 0.6);
+    border-radius: 50%;
+    filter: blur(3px);
+    z-index: 1;
+}
+
+.image-wrapper img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Waves */
+.waves-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
+.waves {
+    width: 100%;
+    height: 100px;
+}
+
+.wave-parallax > use {
+    animation: move-forever var(--wave-animation-duration) cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.wave-parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.wave-parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.wave-parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.wave-parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 350px;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .stats div:first-child::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .introduction {
+        font-size: 0.875rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .browse-experience {
+        padding: 0.875rem 1.75rem;
+    }
+
+    .hero-image {
+        max-width: 240px;
+    }
+}
