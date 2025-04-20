@@ -267,7 +267,7 @@
 }
 
 .section-description {
-    color: var(--text-primary) !important;
+    color: #666666 !important;
     font-size: var(--text-base);
     line-height: var(--leading-normal);
     margin-bottom: 2rem;
