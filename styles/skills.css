@@ -61,6 +61,11 @@
     padding-bottom: 10px;
 }
 
+.skills .section-description {
+    color: #666666;
+    padding-top: 2rem;
+}
+
 .skills-list {
     list-style: none;
     padding: 0;
@@ -87,8 +92,8 @@
     user-select: none;
     position: relative;
     height: 48px;
-    width: 140px; /* Largura fixa */
-    flex: 0 0 140px; /* Não cresce, não encolhe, tamanho fixo */
+    width: 140px;
+    flex: 0 0 140px;
 }
 
 .skill-item::after {
@@ -184,7 +189,6 @@
     text-overflow: ellipsis;
 }
 
-/* Seção de Habilidades */
 .skills {
     padding: 6rem 0;
     background-color: #ffffff !important;
@@ -198,7 +202,6 @@
     margin: 0 auto;
 }
 
-/* Cabeçalho da seção */
 .section-header {
     margin-bottom: 2rem;
     text-align: center;
@@ -216,7 +219,6 @@
     display: inline-block;
 }
 
-/* Transformar a barra em uma seta interativa */
 .section-title::after {
     content: '';
     position: absolute;
@@ -230,7 +232,6 @@
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Container da seta interativa */
 .section-toggle {
     width: 40px;
     height: 28px;
@@ -241,7 +242,6 @@
     transition: transform 0.3s ease;
 }
 
-/* As duas linhas da seta */
 .section-toggle::before,
 .section-toggle::after {
     content: '';
@@ -264,7 +264,6 @@
     transform: rotate(-45deg);
 }
 
-/* Estado quando está fechado */
 .section-toggle.collapsed::before {
     transform: rotate(-45deg);
 }
@@ -273,14 +272,12 @@
     transform: rotate(45deg);
 }
 
-/* Efeito hover */
 .section-toggle:hover::before,
 .section-toggle:hover::after {
     background-color: var(--accent-color-light);
     width: 20px;
 }
 
-/* Tooltip com instrução */
 .section-toggle .toggle-tooltip {
     position: absolute;
     top: -28px;
@@ -301,7 +298,6 @@
     opacity: 1;
 }
 
-/* Área de conteúdo que será escondida/mostrada */
 .skills-content {
     overflow: hidden;
     max-height: 2000px;
@@ -318,7 +314,6 @@
     padding: 0;
 }
 
-/* Resumo de habilidades que aparece quando contraído */
 .skills-summary {
     text-align: center;
     padding: 0.75rem;
@@ -342,15 +337,6 @@
     border-top: 1px dashed rgba(var(--accent-rgb), 0.2);
 }
 
-.section-description {
-    color: var(--text-primary) !important;
-    font-size: var(--text-base);
-    line-height: var(--leading-normal);
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-/* Controles de filtro e busca */
 .skills-controls {
     display: flex;
     flex-direction: column;
@@ -489,9 +475,7 @@
     display: none;
 }
 
-/* Tema Escuro */
 @media (prefers-color-scheme: dark) {
-    /* Desativar o tema escuro completamente para esta seção */
     .skills {
         background-color: #ffffff !important;
         color: #333333 !important;
@@ -499,10 +483,6 @@
     
     .skills .section-title {
         color: var(--accent-color) !important;
-    }
-    
-    .skills .section-description {
-        color: #666666 !important;
     }
     
     .skills .category-title {
@@ -540,7 +520,6 @@
     }
 }
 
-/* Responsividade (Ajustes menores podem ser necessários) */
 @media (max-width: 992px) {
     .skills-grid {
         grid-template-columns: 1fr;

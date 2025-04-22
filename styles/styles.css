@@ -1,9 +1,7 @@
-/* Importação de Fontes do Google */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* Importação de Estilos */
 @import url('variables.css');
 @import url('reset.css');
 @import url('header.css');
@@ -15,7 +13,6 @@
 @import url('footer.css');
 @import url('responsive.css');
 
-/* Estilos Base */
 body {
     font-family: var(--font-body);
     font-size: var(--text-base);
@@ -34,8 +31,7 @@ code, pre {
     font-size: var(--text-sm);
 }
 
-/* Global Styles */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Ajuste baseado na altura do seu header fixo */
+    scroll-padding-top: 80px;
 } 

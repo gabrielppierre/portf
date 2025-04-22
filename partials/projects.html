@@ -1,25 +1,27 @@
-<section id="projects" class="projects section-padding">
+<section id="projects" class="projects">
     <div class="container">
         <header class="section-header">
-            <h2 class="section-title">My Projects</h2>
-            <p class="section-description">
-                Some examples of work where I applied my skills.
-            </p>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-description">Here are some of my most recent projects.</p>
         </header>
 
         <div id="project-filter-status" class="project-filter-status">
-            <span id="active-filter-label">Filtering by:</span>
-            <span id="active-filter-text"></span>
-            <button id="show-all-projects" class="filter-btn show-all-btn" style="display: none;">
-                <i class="fas fa-times"></i>
-                Clear Filter
-            </button>
+            <div class="filter-status-main-row">
+                <span id="active-filter-label" class="active-filter-label">Active Filter:</span>
+                <div id="active-filter-text" class="active-filter-text"></div>
+            </div>
+            <div class="filter-action-buttons">
+                <button id="show-all-projects" class="show-all-btn">
+                    <i class="fas fa-times"></i>
+                    Clear Filters
+                </button>
+            </div>
         </div>
 
         <div class="swiper projects-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="project-card" data-skills="python pandas polars numpy scikit-learn">
+                    <div class="project-card" data-skills="polars pandas scikit-learn">
                         <div class="project-image">
                             <img src="assets/projects/eda.png" alt="EDA Project">
                         </div>
@@ -27,7 +29,6 @@
                             <h3 class="project-title">EDA CIC IDS 2018</h3>
                             <p class="project-description">EDA on CIC IDS 2018-2019, engineering features for training algorithms to detect anomalies.</p>
                             <div class="project-tags">
-                                <span class="tag">Python</span>
                                 <span class="tag">Polars</span>
                                 <span class="tag">Pandas</span>
                                 <span class="tag">Scikit-learn</span>
@@ -145,11 +146,6 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            
-            <div class="swiper-pagination"></div>
         </div>
     </div>
 </section> 

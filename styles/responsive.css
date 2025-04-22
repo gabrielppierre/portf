@@ -59,10 +59,6 @@
     .section-title {
         font-size: var(--text-2xl);
     }
-    
-    .section-description {
-        font-size: var(--text-sm);
-    }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -169,7 +165,6 @@
     }
 }
 
-/* Breakpoints para o Hero */
 @media (max-width: 1200px) {
     .hero-wrapper {
         gap: 3rem;

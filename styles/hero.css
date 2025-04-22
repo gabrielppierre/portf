@@ -1,4 +1,3 @@
-/* Reset e variáveis globais */
 :root {
     --hero-bg: #2260C5;
     --text-color: #ffffff;
@@ -7,14 +6,12 @@
     --text-secondary: rgba(255, 255, 255, 0.7);
 }
 
-/* Reset básico */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
@@ -78,7 +75,6 @@
     margin-bottom: 1.5rem;
 }
 
-/* Stats */
 .stats {
     display: flex;
     gap: 3rem;
@@ -131,7 +127,6 @@
     box-shadow: 0 4px 15px rgba(80, 196, 237, 0.4);
 }
 
-/* Hero Image */
 .hero-image {
     flex: 1;
     max-width: 240px;
@@ -169,7 +164,6 @@
     z-index: 2;
 }
 
-/* Waves */
 .waves-container {
     position: absolute;
     bottom: 0;
@@ -218,7 +212,6 @@
     }
 }
 
-/* Responsive Adjustments */
 @media (max-width: 992px) {
     .hero-wrapper {
         flex-direction: column;

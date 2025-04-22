@@ -1,10 +1,3 @@
-/* ==========================================================================
-   HEADER REFACTOR - Inspired by modern, clean design
-   ========================================================================== */
-
-/* ==================
-   Base Header Styles
-   ================== */
 .header {
     position: fixed;
     top: 0;
@@ -32,9 +25,6 @@
     align-items: center;
 }
 
-/* ==================
-   Logo Styles
-   ================== */
 .logo {
     display: flex;
     align-items: center;
@@ -61,9 +51,6 @@
     letter-spacing: var(--tracking-wide);
 }
 
-/* ==================
-   Navigation Links
-   ================== */
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -95,12 +82,10 @@
     width: 100%;
 }
 
-/* Cores específicas para a linha quando rolado */
 .header.scrolled .nav-links a:not(.download-btn)::after {
     background-color: #2260C5;
 }
 
-/* Download CV Button (Styled as Link + Icon) */
 .download-btn {
     display: flex;
     align-items: center;
@@ -117,7 +102,6 @@
     letter-spacing: var(--tracking-wide);
 }
 
-/* Botão de download no estado inicial (topo da página) */
 .header .download-btn {
     display: flex;
     align-items: center;
@@ -129,7 +113,6 @@
     transition: all 0.3s ease !important;
 }
 
-/* Botão de download quando rolado */
 .header.scrolled .download-btn {
     background-color: #2260C5;
     color: white !important;
@@ -140,16 +123,13 @@
 .header.scrolled .download-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(34, 96, 197, 0.3);
-    background-color: #1a4c9e; /* Cor mais escura no hover */
+    background-color: #1a4c9e;
 }
 
 .download-btn::after {
     display: none !important;
 }
 
-/* ==================
-   Mobile Menu Button (Hamburger)
-   ================== */
 .menu-toggle {
     display: none;
     background: none;
@@ -198,9 +178,6 @@
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ==================
-   Mobile Nav Panel & Responsive
-   ================== */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -232,7 +209,6 @@
         transform: translateX(0);
     }
 
-    /* Links dentro do menu lateral */
     .nav-links a {
         font-size: 1.2rem;
         width: 100%;
@@ -241,7 +217,6 @@
         color: #2260C5 !important;
     }
 
-    /* Ajusta as cores iniciais para mobile */
     .header .logo {
         color: white;
     }
@@ -253,7 +228,6 @@
         transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    /* Animação do X quando menu está aberto */
     .menu-toggle[aria-expanded="true"] .hamburger {
         background-color: transparent !important;
     }
@@ -271,7 +245,6 @@
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Cores quando rolado */
     .header.scrolled {
         background-color: rgba(255, 255, 255, 0.65);
         backdrop-filter: blur(12px) saturate(180%);
@@ -290,7 +263,6 @@
         background-color: #2260C5;
     }
 
-    /* Mantém o header transparente quando o menu está aberto */
     .header:has(.nav-links.active) {
         background-color: transparent !important;
         backdrop-filter: none !important;
@@ -299,7 +271,6 @@
         border-bottom: none !important;
     }
 
-    /* Overlay quando o menu está aberto */
     .header::before {
         content: '';
         position: fixed;
@@ -319,22 +290,17 @@
         visibility: visible;
     }
 
-    /* Mantém o botão de menu sempre visível */
     .menu-toggle {
         position: relative;
         z-index: 1002;
     }
 
-    /* Remove o nome e separador em mobile */
     .logo-name,
     .logo-separator {
         display: none;
     }
 }
 
-/* ==================
-   Body Scroll Lock & Overlay
-   ================== */
 body.menu-open {
     overflow: hidden;
 }
@@ -359,7 +325,6 @@ body.menu-open {
     transition: opacity 0.4s ease, visibility 0s linear 0s;
 }
 
-/* Animations */
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
@@ -371,7 +336,6 @@ body.menu-open {
     }
 }
 
-/* Cores quando o header está transparente (início da página) */
 .header .logo,
 .header .nav-links a {
     color: var(--text-color);
@@ -383,7 +347,6 @@ body.menu-open {
     background-color: var(--text-color);
 }
 
-/* Cores quando o header está rolado */
 .header.scrolled .logo,
 .header.scrolled .nav-links a {
     color: #2260C5;
@@ -395,7 +358,6 @@ body.menu-open {
     background-color: #2260C5;
 }
 
-/* Mantém o botão de download sempre branco */
 .header .download-btn,
 .header.scrolled .download-btn {
     color: white !important;

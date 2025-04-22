@@ -1,7 +1,6 @@
 import { initializeAll } from './script.js';
 import { initProjectsSwiper } from './swiper-init.js';
 
-// Função para carregar seções HTML
 async function loadHTML(id, file) {
     try {
         const response = await fetch(`partials/${file}`);
@@ -11,7 +10,7 @@ async function loadHTML(id, file) {
         if (element) {
             element.innerHTML = html;
             console.log(`Successfully loaded ${file} into #${id}`);
-            return element; // Retorna o elemento para possível uso posterior
+            return element;
         } else {
             console.warn(`Element with id '${id}' not found.`);
             return null;
@@ -22,11 +21,9 @@ async function loadHTML(id, file) {
     }
 }
 
-// Função principal de inicialização
 async function initialize() {
     console.log("Initializing application...");
     try {
-        // Carregar seções HTML e aguardar a conclusão
         const loadedElements = await Promise.all([
             loadHTML('header', 'header.html'),
             loadHTML('hero', 'hero.html'),
@@ -38,16 +35,12 @@ async function initialize() {
 
         console.log("All HTML sections loaded.");
 
-        // Filtrar elementos que não foram carregados (retornaram null)
         const successfulLoads = loadedElements.filter(el => el !== null);
 
-        // Verificar se todos os carregamentos essenciais foram bem-sucedidos
         if (successfulLoads.length === loadedElements.length) {
             console.log("All essential sections loaded successfully. Initializing scripts...");
-            // Inicializar scripts gerais e específicos APÓS o carregamento do HTML
-            initializeAll(); // Chama scripts de script.js (header, swiper, etc.)
+            initializeAll();
 
-            // Inicializa o Swiper de projetos
             setTimeout(() => {
                 initProjectsSwiper();
             }, 300);
@@ -60,10 +53,8 @@ async function initialize() {
     }
 }
 
-// Inicializar quando o DOM estiver pronto
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initialize);
 } else {
-    // Se o DOM já estiver pronto, mas talvez o script tenha sido carregado depois
     initialize();
 } 
