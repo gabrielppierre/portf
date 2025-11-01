@@ -36,7 +36,7 @@
 .experience-subtitle {
     font-size: 1.75rem;
     color: #1f2937;
-    margin-bottom: 2rem;
+    margin: 3.5rem 0 2rem;
     font-weight: 500;
     position: relative;
     padding-left: 1rem;
@@ -52,6 +52,10 @@
     height: 24px;
     background: var(--accent-color);
     border-radius: 2px;
+}
+
+.experience-subtitle:first-of-type {
+    margin-top: 0;
 }
 
 .row {
@@ -121,6 +125,37 @@
     font-size: 0.95rem;
 }
 
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.contact-list i {
+    color: var(--accent-color);
+}
+
+.contact-list a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: var(--accent-color);
+}
+
 .social-links {
     display: flex;
     justify-content: flex-start;
@@ -151,6 +186,14 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+}
+
+.experience-grid--two {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.experience-subtitle + .experience-grid {
+    margin-top: 2rem;
 }
 
 .wrap-card {
@@ -237,6 +280,36 @@ hr {
     font-weight: bold;
 }
 
+.publications-section {
+    padding: var(--section-padding-y, 6rem) 0;
+    background: #ffffff;
+}
+
+.publications-section .section-header {
+    margin-bottom: 3rem;
+}
+
+.publications-grid .card {
+    min-height: 0;
+}
+
+.publication-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.publication-links a {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.publication-links a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 992px) {
     .col-md-3, .col-md-9 {
         flex: 0 0 100%;
@@ -257,6 +330,10 @@ hr {
         max-width: 500px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .contact-list {
+        align-items: center;
     }
 
     .social-links {

@@ -180,6 +180,16 @@
     transform: scale(1.15);
 }
 
+.skill-icon i {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon i {
+    transform: scale(1.15);
+}
+
 .skill-name {
     font-size: var(--text-sm);
     font-weight: var(--font-medium);

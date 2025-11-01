@@ -1,4 +1,4 @@
-import { initializeAll } from './script.js';
+import { initializeAll, initProjectFilter } from './script.js';
 import { initProjectsSwiper } from './swiper-init.js';
 
 async function loadHTML(id, file) {
@@ -30,6 +30,7 @@ async function initialize() {
             loadHTML('skills', 'skills.html'),
             loadHTML('projects', 'projects.html'),
             loadHTML('testimonial', 'testimonial.html'),
+            loadHTML('publications', 'publications.html'),
             loadHTML('footer', 'footer.html')
         ]);
 
@@ -39,11 +40,12 @@ async function initialize() {
 
         if (successfulLoads.length === loadedElements.length) {
             console.log("All essential sections loaded successfully. Initializing scripts...");
-            initializeAll();
+            const { slidesData } = initializeAll();
+            const projectsSwiper = initProjectsSwiper();
 
-            setTimeout(() => {
-                initProjectsSwiper();
-            }, 300);
+            if (projectsSwiper) {
+                initProjectFilter(projectsSwiper, slidesData);
+            }
         } else {
             console.error("Failed to load one or more essential HTML sections. Aborting script initialization.");
         }

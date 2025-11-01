@@ -1,19 +1,19 @@
-function initProjectsSwiper() {
-    const swiperElement = document.querySelector('.projects-swiper');
+export function initProjectsSwiper(selector = '.projects-swiper') {
+    const swiperElement = document.querySelector(selector);
     if (!swiperElement) {
-        console.warn('Elemento do Swiper não encontrado. Tentando novamente em 500ms...');
-        setTimeout(initProjectsSwiper, 500);
-        return;
+        console.warn('Projects swiper element not found.');
+        return null;
     }
 
-    console.log('Inicializando Swiper de projetos...');
-    
-    const projectsSwiper = new Swiper('.projects-swiper', {
+    if (swiperElement.swiper) {
+        swiperElement.swiper.destroy(true, true);
+    }
+
+    const projectsSwiper = new Swiper(swiperElement, {
         slidesPerView: 1,
         spaceBetween: 20,
         centeredSlides: true,
         loop: true,
-        
         breakpoints: {
             320: {
                 slidesPerView: 1,
@@ -36,49 +36,34 @@ function initProjectsSwiper() {
                 centeredSlides: false
             }
         },
-        
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true
         },
-        
         effect: 'slide',
         speed: 600,
-        
         navigation: {
             nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            prevEl: '.swiper-button-prev'
         },
-        
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
             dynamicBullets: true
         },
-        
         grabCursor: true,
         watchSlidesProgress: true,
         watchSlidesVisibility: true,
         observer: true,
         observeParents: true,
-        
         preloadImages: false,
         lazy: {
             loadPrevNext: true,
             loadPrevNextAmount: 2
         }
     });
-    
-    window.addEventListener('resize', function() {
-        projectsSwiper.update();
-    });
-    
-    console.log('Swiper de projetos inicializado com sucesso!');
+
+    window.addEventListener('resize', () => projectsSwiper.update());
+    return projectsSwiper;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(initProjectsSwiper, 100);
-});
-
-export { initProjectsSwiper }; 

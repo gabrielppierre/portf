@@ -83,6 +83,20 @@ footer p.copyright {
     margin: 0.5rem 0;
 }
 
+.footer-section.contact p {
+    margin: 0.5rem 0;
+}
+
+.footer-section.contact a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section.contact a:hover {
+    color: #ffffff;
+}
+
 .social-links {
     display: flex;
     gap: 1.5rem;
