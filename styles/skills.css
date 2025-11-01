@@ -63,7 +63,7 @@
 
 .skills .section-description {
     color: #666666;
-    padding-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .skills-list {
@@ -224,7 +224,7 @@
     font-size: var(--text-3xl);
     font-weight: var(--font-bold);
     color: var(--accent-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
 }
@@ -240,6 +240,10 @@
     background: var(--accent-color);
     border-radius: 2px;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section-header .section-description {
+    margin-top: 1.5rem;
 }
 
 .section-toggle {

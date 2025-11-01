@@ -18,7 +18,7 @@
 
 .experience-section .section-description {
     color: #666666;
-    padding-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .experience-section .section-title::after {
@@ -287,6 +287,10 @@ hr {
 
 .publications-section .section-header {
     margin-bottom: 3rem;
+}
+
+.publications-section .section-title {
+    margin-bottom: 1.5rem;
 }
 
 .publications-grid .card {
